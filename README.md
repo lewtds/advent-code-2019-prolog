@@ -10,7 +10,7 @@ and thus would be a perfect fit for Prolog. On the other hand, there are problem
 machine (see [a_02b.prolog](a_02b.prolog)), which proved to be a bit frustrating. The hope is that AoC problems
 are diverse enough for patterns to emerge and for me to learn how to deal with different situations in Prolog.
 
-Keep in mind that this is rather personal and that I'm still quite an inexperience Prologer. If you want to follow along,
+Keep in mind that this is rather personal and that I'm still quite an inexperienced Prologer. If you want to follow along,
 I'm using `SWI-Prolog version 8.1.13 for x86_64-darwin`. Hopefully each Prolog file is self-contained and has its own
 instructions on how to reproduce...
 
