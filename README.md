@@ -13,3 +13,23 @@ are diverse enough for patterns to emerge and for me to learn how to deal with d
 Keep in mind that this is rather personal and that I'm still quite an inexperience Prologer. If you want to follow along,
 I'm using `SWI-Prolog version 8.1.13 for x86_64-darwin`. Hopefully each Prolog file is self-contained and has its own
 instructions on how to reproduce...
+
+## Other Attempts with Prolog
+
+### 2019
+
+https://github.com/kristianhasselknippe/advent-of-code-2019
+
+### 2018
+
+- Advent of Code Day 5 Pt. 1 in Prolog (2018) https://www.youtube.com/watch?v=utuHH_NuF_E
+- Advent of Code Day 5 Pt. 2 in Prolog (2018) https://www.youtube.com/watch?v=u17Kmfnt64U
+
+### 2017
+
+- https://github.com/samwalrus/prolog_advent_of_code
+- https://github.com/Average-user/adventofcode-pl-2017
+
+### 2016
+
+- https://github.com/Limmen/Advent-Of-Code16-Prolog
