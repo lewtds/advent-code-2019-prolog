@@ -36,7 +36,7 @@ password_between(P, Lower, Upper) :-
     P @=< Upper.
 
 :- initialization(main, main).
-main(Argv) :-
+main :-
     setof(P, password_between(P, [1, 7, 8, 4, 1, 6], [6, 7, 6, 4, 6, 1]), Ps),
     length(Ps, L),
     write(L).
