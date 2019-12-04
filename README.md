@@ -18,18 +18,31 @@ instructions on how to reproduce...
 
 ### 2019
 
-https://github.com/kristianhasselknippe/advent-of-code-2019
+- https://github.com/kristianhasselknippe/advent-of-code-2019
+- https://github.com/slavfox/advent-of-code-2019
+- https://github.com/lemonad/advent-of-code/blob/master/2019-misc/december4.pl
+- https://github.com/gamache/advent2019
 
 ### 2018
 
 - Advent of Code Day 5 Pt. 1 in Prolog (2018) https://www.youtube.com/watch?v=utuHH_NuF_E
 - Advent of Code Day 5 Pt. 2 in Prolog (2018) https://www.youtube.com/watch?v=u17Kmfnt64U
+- https://github.com/jcazevedo/advent-of-code-2018/tree/master/day02-prolog
+- https://github.com/lemonad/advent-of-code/tree/master/2018%20(Prolog)
+
 
 ### 2017
 
 - https://github.com/samwalrus/prolog_advent_of_code
 - https://github.com/Average-user/adventofcode-pl-2017
+- https://github.com/sindrekjr/AdventOfCode2017/blob/master/12/solution.pl
 
 ### 2016
 
 - https://github.com/Limmen/Advent-Of-Code16-Prolog
+- https://github.com/modernserf/advent-of-code
+- https://github.com/leandrosansilva/toy_adventofcode_prolog
+
+### 2015
+
+- https://github.com/sindrekjr/AdventOfCode2015
