@@ -20,7 +20,7 @@ instructions on how to reproduce...
 
 - https://github.com/kristianhasselknippe/advent-of-code-2019
 - https://github.com/slavfox/advent-of-code-2019
-- https://github.com/lemonad/advent-of-code/blob/master/2019-misc/december4.pl
+- https://github.com/lemonad/advent-of-code/blob/master/2019-misc/december4.pl (almost _exactly_ the same solution as mine!)
 - https://github.com/gamache/advent2019
 
 ### 2018
