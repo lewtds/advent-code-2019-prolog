@@ -246,10 +246,10 @@ interpret_opcode(StartAddr, NextAddr) :-
     ExecutableOpCode.
 
 
+interpret(done).
 interpret(StartPosition) :-
     interpret_opcode(StartPosition, NextPosition),
-    (  NextPosition = done
-    ;  interpret(NextPosition)).
+    interpret(NextPosition).
 
 
 :- initialization(main, main).

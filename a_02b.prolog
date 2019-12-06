@@ -94,11 +94,10 @@ interpret_opcode(Pos, NextPos) :- m(Pos, 2),
 interpret_opcode(Pos, done) :- m(Pos, 99).
 
 
+interpret(done, Out) :- m(0, Out).
 interpret(StartPosition, Out) :-
     interpret_opcode(StartPosition, NextPosition),
-    (  NextPosition = done
-    -> m(0, Out)
-    ;  interpret(NextPosition, Out)).
+    interpret(NextPosition, Out).
 
 % Note that the end result seems to increase linearly with Noun and Verb so it might be much faster to figure out
 % a mathematical relation and solve for Noun-Verb pair.

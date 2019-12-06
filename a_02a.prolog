@@ -108,12 +108,10 @@ interpret_opcode(Pos, NextPos) :- m(Pos, 2),
 
 interpret_opcode(Pos, done) :- m(Pos, 99).
 
-
+interpret(done) :- m(0, Out), write(Out).
 interpret(StartPosition) :-
     interpret_opcode(StartPosition, NextPosition),
-    (  NextPosition = done
-    -> setof(m(N, M), m(N, M), O), write(O)
-    ;  interpret(NextPosition)).
+    interpret(NextPosition).
 
 :- initialization(main, main).
 main :-
