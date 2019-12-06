@@ -56,6 +56,23 @@
 %
 %    Your puzzle answer was 144909.
 
+
+
+parent(A, A, 0).
+parent(A, B, Dist) :-
+    orb(A, C),
+    parent(C, B, Dist2),
+    Dist is 1 + Dist2.
+
+total(Distance) :- findall(D, parent('COM', _, D), Ds), sum_list(Ds, Distance).
+
+
+:- initialization(main, main).
+main :-
+    total(Distance),
+    write(Distance).
+
+
 %orb('COM', 'B').
 %orb('B', 'C').
 %orb('C', 'D').
@@ -1176,18 +1193,3 @@ orb('51M', 'QZZ').
 orb('Y1S', 'F31').
 orb('S12', 'Q16').
 orb('L1Q', '1WM').
-
-
-parent(A, A, 0).
-parent(A, B, Dist) :-
-    orb(A, C),
-    parent(C, B, Dist2),
-    Dist is 1 + Dist2.
-
-total(Distance) :- findall(D, parent('COM', _, D), Ds), sum_list(Ds, Distance).
-
-
-:- initialization(main, main).
-main :-
-    total(Distance),
-    write(Distance).

@@ -53,6 +53,52 @@
 
 
 
+directly_connected(A, B) :- orb(A, B); orb(B, A).
+
+
+% TODO this "agenda search" implementation method for BFS is probably better than mine.
+% https://stackoverflow.com/questions/769658/breadth-first-in-prolog
+bfs(Source, Dest, Steps) :-
+     findall(D, directly_connected(Source, D), Front),
+     bfs_recurse(Dest, Front, [Source], 0, Steps).
+
+bfs_recurse(Dest, Front, _, Steps, StepsOut) :-
+    member(Dest, Front),
+    StepsOut is Steps - 1.
+
+bfs_recurse(Dest, Front, Seen, Step, StepOut) :-
+    Front \= [],
+    setof(D, (
+        member(Source, Front),
+        directly_connected(Source, D),
+        \+ member(D, Seen)
+    ), Neighbors),
+    append(Seen, Front, NextSeen),
+    NextStep is Step + 1,
+    bfs_recurse(Dest, Neighbors, NextSeen, NextStep, StepOut).
+
+:- initialization(main, main).
+main :-
+    bfs('YOU', 'SAN', Steps),
+    write(Steps).
+
+
+%
+%orb('COM', 'B').
+%orb('B', 'C').
+%orb('C', 'D').
+%orb('D', 'E').
+%orb('E', 'F').
+%orb('B', 'G').
+%orb('G', 'H').
+%orb('D', 'I').
+%orb('E', 'J').
+%orb('J', 'K').
+%orb('K', 'L').
+%orb('K', 'YOU').
+%orb('I', 'SAN').
+
+
 orb('R45', '497').
 orb('TYR', '159').
 orb('RJC', 'Z1B').
@@ -1161,46 +1207,3 @@ orb('Y1S', 'F31').
 orb('S12', 'Q16').
 orb('L1Q', '1WM').
 
-%
-%orb('COM', 'B').
-%orb('B', 'C').
-%orb('C', 'D').
-%orb('D', 'E').
-%orb('E', 'F').
-%orb('B', 'G').
-%orb('G', 'H').
-%orb('D', 'I').
-%orb('E', 'J').
-%orb('J', 'K').
-%orb('K', 'L').
-%orb('K', 'YOU').
-%orb('I', 'SAN').
-
-directly_connected(A, B) :- orb(A, B); orb(B, A).
-
-
-% TODO this "agenda search" implementation method for BFS is probably better than mine.
-% https://stackoverflow.com/questions/769658/breadth-first-in-prolog
-bfs(Source, Dest, Steps) :-
-     findall(D, directly_connected(Source, D), Front),
-     bfs_recurse(Dest, Front, [Source], 0, Steps).
-
-bfs_recurse(Dest, Front, _, Steps, StepsOut) :-
-    member(Dest, Front),
-    StepsOut is Steps - 1.
-
-bfs_recurse(Dest, Front, Seen, Step, StepOut) :-
-    Front \= [],
-    setof(D, (
-        member(Source, Front),
-        directly_connected(Source, D),
-        \+ member(D, Seen)
-    ), Neighbors),
-    append(Seen, Front, NextSeen),
-    NextStep is Step + 1,
-    bfs_recurse(Dest, Neighbors, NextSeen, NextStep, StepOut).
-
-:- initialization(main, main).
-main :-
-    bfs('YOU', 'SAN', Steps),
-    write(Steps).
