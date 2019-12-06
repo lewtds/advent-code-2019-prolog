@@ -1178,6 +1178,9 @@ orb('L1Q', '1WM').
 
 directly_connected(A, B) :- orb(A, B); orb(B, A).
 
+
+% TODO this "agenda search" implementation method for BFS is probably better than mine.
+% https://stackoverflow.com/questions/769658/breadth-first-in-prolog
 bfs(Source, Dest, Steps) :-
      findall(D, directly_connected(Source, D), Front),
      bfs_recurse(Dest, Front, [Source], 0, Steps).
